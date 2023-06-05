@@ -1,0 +1,56 @@
+CHANGING VOLUME AND STORAGE:
+
+CHAGING INSTANCE TYPE: 
+- write all the steps for creating ec2 instance
+- then click on the instance state of the created ec2 make it "stop"
+- then cick on change instance type 
+- change t2.micro to t2.medium
+- come back and observe the change in the ec2 dashboard 
+-
+EBS: MODIFY VOLUMES
+- GO TO VOLUMES
+- FIND THE VOLUME OF THE CURRENT EC2 
+- CLICK ON ACTIONS AND MODIFY THE VOLUME 
+
+4 TYPES 
+2 ssd - general purpose gp 
+      - input output io
+2 hdd - st1 less frequently used data
+      - sc1 backup etc
+
+ATTACHING AND DETACHING VOLUMES: 
+- go to volumes
+- create volume 
+- click on the volume created, and go to actions 
+- click on attach volume 
+- select the ec2 options available from that region
+- attach 
+- verify by going to storage options of the ec2
+- click on the same volume 
+- go to actions and detach the volume 
+- wait for 2 secs, and check in the storage section of ec2 whether its removed or not 
+- after detaching go to the action section of the volume and delete it 
+
+
+
+SNAPSHOT 
+mumbai:
+- create one instance in mumbai 
+- only default storage 
+
+singapore:
+- go to singapore region 
+- create ec2 with ebs by clicking on "add new volume" while creating the ec2 instance 
+- go to volumes, click on the actions for the additonal ebs created while making ec2
+- select " create snapshot" option
+- go to snapshots section 
+- You will find a recently created snapshot 
+- go to actions of that snapshot and copy that snapshot in the region where mumbai ec2 is created 
+
+mumbai: 
+- go to snapshots
+- you will find the copied snapshot 
+- click on that snapshot, go to actions of it and create a volume for that snapshot 
+- after creating volume for that snap shot we can attach or detach that volume to our mumbai ec2s
+- verify in the storage section of mumbai ec2
+
