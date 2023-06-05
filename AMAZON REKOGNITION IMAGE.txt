@@ -1,0 +1,66 @@
+AMAZON REKOGNITION IMAGE 
+
+- ARI 
+- Open IAM in security services
+- create role -> function lambda
+	      -> permissions: S3 FULL ACCESS, DYNAMO DB FULL ACCESS, LAMBDA EXECUTE, REKOGNITION FULL ACCESS
+
+- open s3 bucket service in storage 
+- create bucket, acl enabled, and allow all acccess and ack it 
+- upload 2-3 images in it 
+- create a lambda function
+- choose python 3.10
+- choose role we made
+- write a code which gets triggered on to image rekognition when an image is under any event in s3
+- on deploying u can see difference between these images
+
+
+    import json
+    import boto3
+    def lambda_handler(event, context) :
+        client = boto3.client('rekognition')
+        s3=boto3. client ("s3")
+        fileObj=s3.get_object(Bucket="exp10rekognition", Key="1132062.jpg")
+        file_content=fileObj["Body"].read()
+        response = client.detect_labels(Image={
+            "S3Object": {
+                "Bucket": "exp10rekognition",
+                "Name": "1132062.jpg",
+            }}, MaxLabels=10)
+        print(response)
+        return {
+            'response': response,
+            'statusCode': 200,
+            'body': json.dumps('Hello from Lambda!')
+        }
+
+
+ give event name as "event1" and paste this in JSON event:
+        {
+            "reponse": {
+                "Labels": [
+                    {
+                        "Name": "White Board",
+                        "confidence": 98.66819763183594,
+                        "Instances": [
+                            {
+                                "BoundingBox": {
+                                    "Width": 0.9999999403953552,
+                                    "Height": 0.9999999403953552,
+                                    "Left": 0.0,
+                                    "Top": 0.0
+                                },
+                                "Confidence": 98.66819763183594
+                            }
+                        ],
+                        "Parents": [],
+                        "Aliases": [],
+                        "Categories": [
+                            {
+                                "Name": "Offices and workspaces"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
