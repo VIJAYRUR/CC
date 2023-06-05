@@ -1,0 +1,22 @@
+AMAZON SAGEMAKER: 
+
+
+- click on create a notebook 
+- select ml.t2.medium as configuration
+- enter name for the notebook
+- create notebook instance
+purchase/not purchased data
+- open the jupyter open conda_python3 and first import all libraries
+get_execution_role()
+pandas
+numpy
+sagemaker libraries
+
+-> split and train the data
+using np.split(frac=1) means total data splitting 
+
+-> start sagemaker session
+-> create a model (XGBOOST HERE) 
+-> fit the model 
+-> deploy the model 
+-> test the data and overall classifiction accuracy 90%
