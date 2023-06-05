@@ -1,0 +1,75 @@
+CREATING AN INSTANCE (UBUNTU):
+-services
+- all services
+- compute -> ec2
+- enter name
+- enter OS (image- amazon machine image)
+- select ubuntu free tier(version 22.0.4 LTS) and 64 bit-x86 architecute
+- instance type-> t2.micro i.e 1 cpu and 1gb memory
+- create keypair login/ or use existing one, download .pem file
+- create security group, allow ssh traffic , http and https traffic
+- click on launch instance
+- click on view all instances
+- click on created ec2
+
+
+CONNECTING FROM AWS CONSOLE:
+- connect with " ec2 instance connect" 
+- enter 'echo hello world' and verify
+- do sudo apt-get update
+- do sudo apt-get install nginx
+- open the public IP given to ec2 server
+
+CONNECTING FROM POWERSHELL:
+- connect with "ssh client:
+- open powershell
+- go to directory where .pem file is downloaded
+- paste the given command in aws console
+- do sudo apt-get update
+- do sudo apt-get install nginx
+- open the public IP given to ec2 server
+IF ERROR: 
+- go to security
+- go to inbound rules
+- click on edit inbound rules
+- add traffic from 0.0.0.0/0 for http and https
+- now check
+
+CONNECTING WITH PUTTY:
+- open puttygen
+- load the .pem file downloaded , save a private key for it, click on generate
+- open putty app, paste ubutnu@IPADDRESS in the given field, click on ssh connect
+- go to ssh-auth-credentials
+- browse the private key u have generated
+- now click connect
+- ubuntu cli will be opened
+
+
+AMAZON LINUX IMAGE: 
+- services
+- all services
+- compute -> ec2
+- select amazon linux image ( 2 AMI VERSION) 
+- launch instance
+- copy the command from "connect with ssh" option after clicking on connect 
+- paste in power shell , in the directory where .pem file is there
+- only command changes now: 
+sudo su - 
+yum update 
+yum install http -y 
+cd/var/www/html
+echo hello world> index.html
+service http start 
+chkconfig httpd on
+- edit inbound rules 
+- open with the public ip address
+- you will output as "hello world" 
+
+IN BOOTSTRAPING YOU CAN GIVE COMMANDS THAT CAN BE RUNNED AT THE TIME OF CREATING INSTANCE ITSELF 
+COPY THE ABOVE COMMANDS IN " ADVANCED SECTION (USER DATA)" 
+THEN LAUNCH 
+so directly we will get hello world when opened public ip address
+
+ 
+ 
+
