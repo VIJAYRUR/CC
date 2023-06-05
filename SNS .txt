@@ -1,0 +1,21 @@
+SNS : 
+
+- simple notification service 
+
+- open sns
+- create topic 
+- enter name
+- enable standard version 
+- create topc
+- create subscription
+- email option
+- give ur email
+- create subscription
+- verify mail for sns and confirm
+- you will get confirm ack from aws
+- go to topics dashboard
+- click on "publish message"
+- enter message
+- enter subject, TTL, desc and send 
+- verify now
+- similary u can add phone number add send sms 

@@ -1,0 +1,30 @@
+EFS
+
+- Elastic File System
+
+1_ec2:
+- create a ec2 instance in mumbai region
+- USE ami image, add security group ssh traffic
+- enable nfs security rule (add security group rule on edit)
+(add security group rule on edit)
+- launch the instance
+
+2ec2:
+- create a ec2 instance in mumbai region
+- USE ami image, add security group ssh traffic
+- enable nfs security rule (add security group rule on edit)
+(add security group rule on edit)
+- launch the instance 
+
+EFS: 
+- enter efs name
+- click on review and create
+- click on attach
+- go to networks modify and add security groups 
+- go to each of ec2 
+do following commands: 
+mkdir efs
+sudo su 
+yum install -y amazon-efs-utils
+- do changes in one ec2, u can in other 
+

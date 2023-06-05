@@ -1,0 +1,31 @@
+S3: 
+
+- simple storage service 
+
+- services
+- all services
+- storage-> s3
+- create a bucket
+- enter a bucket name which globally unq
+- if u want to copy settings of other bucket: choose" copy settings from other bucket"
+- ACL enabbled ( access control)
+- allow public acess -> ack it 
+- bucket versioning on/off
+- create bucket
+- upload an image -> click on that -> click on the url 
+- ull get ' access denied' 
+- allow " everyone (public access)"
+- ack the changes
+- click on the url, now you will get the image
+
+RECOVERY OPTIONS:
+- choose bucket -> properties -> bucket versioning 
+- choose enable , save changes 
+- click on the image uploaded and delete
+- toggle on the "show versions" button
+- check the image deleted
+- either upload again/ permanently delete
+
+DELETING: 
+- delete all the inner structure of files and folders
+- click on the buket, and choose delete option

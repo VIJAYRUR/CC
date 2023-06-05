@@ -1,0 +1,10 @@
+SQS: 
+
+- simple queue service
+
+- click on create queue-> standard
+- use default configuaration
+- click on the create queue
+- click on "send and recieve messages"
+- to send -> write and send
+- to receive -> poll messages
